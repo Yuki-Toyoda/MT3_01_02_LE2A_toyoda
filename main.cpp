@@ -794,6 +794,21 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		/// ↑描画処理ここまで
 		///
 
+		///
+		/// ↓デバック処理ここから
+		///
+
+		ImGui::Begin("Debug");
+		ImGui::DragFloat3("cameraTranslate", &cameraTranslate.x, 0.01f);
+		ImGui::DragFloat3("cameraRotate", &cameraRotate.x, 0.01f);
+		ImGui::DragFloat3("SphereCenter", &sphere.center.x, 0.01f);
+		ImGui::DragFloat("SphereRadius", &sphere.radius, 0.01f);
+		ImGui::End();
+
+		///
+		/// ↑デバック処理ここまで
+		///
+
 		// フレームの終了
 		Novice::EndFrame();
 
